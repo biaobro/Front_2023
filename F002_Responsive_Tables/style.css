@@ -1,0 +1,83 @@
+html { color-scheme : dark}
+
+body{
+    color: #eee;
+    font-size: 1.125rem;
+    font-family: system-ui;
+    line-height: 1.5;
+}
+
+.wrapper{
+    width: min(900px, 100% - 3rem);
+    margin-inside: auto;
+}
+
+table{
+    border-collapse: collapse;
+    background: #323232;
+}
+
+caption,th,td{
+    padding: 1rem;
+}
+
+caption, th{
+    text-align: left;
+}
+
+caption{
+    background: hsl(0 0% 0%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+th{
+    background: hsl(0 0% 0% / 0.5);
+}
+
+/* 实现奇数偶数行深度不同*/
+tr:nth-of-type(2n){
+    background: hsl(0 0% 0% / 0.1);
+}
+
+/* 页宽度变化时，展示横向滚动条 */
+.table-container{
+    max-width: 100%;
+    overflow-x: scroll;
+}
+
+/* 页宽变化时，数据堆叠展示，同时隐藏 th */
+@media (max-width: 650px) {
+    th {
+        display: none;
+    }
+    td{
+        /*display:block*/
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: 15ch auto;
+        padding: 0.5rem 1rem;
+    }
+    td:first-child{
+        padding-bottom: 2rem;
+    }
+    td::before{
+        content: attr(data-cell) ":";
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    /* 有了下面这部分 nth-of-type html 里就不需要写 data-cell了*/
+    /*td:nth-of-type(1)::before{*/
+    /*    content: "name";*/
+    /*}*/
+    /*td:nth-of-type(2)::before{*/
+    /*    content: "poles";*/
+    /*}*/
+    /*td:nth-of-type(3)::before{*/
+    /*    content: "podiums";*/
+    /*}*/
+}
+
+
+
