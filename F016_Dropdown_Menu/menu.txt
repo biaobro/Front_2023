@@ -1,0 +1,9 @@
+======== DROPDOWN =======
+.dropdown__name
+My profile
+
+Messages
+
+Accounts
+
+Settings
