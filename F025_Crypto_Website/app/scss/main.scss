@@ -1,0 +1,21 @@
+// import all files
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/utilities";
+
+@import "base/reset";
+@import "base/typography";
+
+@import "components/button";
+@import "components/table";
+@import "components/form";
+
+@import "layout/header";
+@import "layout/navbar";
+@import "layout/footer";
+
+@import "pages/index";
+
+
+// output file will be located into dist
